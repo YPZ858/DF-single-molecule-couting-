@@ -74,6 +74,7 @@ if (!startsWith(list[i],"Log")){
         run("Enhance Contrast", "saturated=0.35");
         saveAs("Jpeg", svpath1);
         run("Run analysis", "filter=[Wavelet filter (B-Spline)] scale=2.0 order=3 detector=[Centroid of connected components] watershed=false threshold=0.5*std(Wave.F1)+0.1*mean(Med.F) estimator=[PSF: Integrated Gaussian] sigma=1.6 fitradius=5 method=[Maximum likelihood] full_image_fitting=false mfaenabled=false renderer=[Scatter plot] dxforce=false magnification=10.0 dx=10.0 colorizez=false threed=false dzforce=false repaint=50");
+        run("Export results", "filepath=loclist.csv fileformat=[CSV (comma separated)] sigma=true intensity=true chi2=false offset=false saveprotocol=true x=true y=true bkgstd=false id=true uncertainty=true frame=true detections=true");
         File.copy(path1x, svpath4x);
         selectWindow("Scatter plot");
         run("Find Maxima...", "prominence=0 output=List");
